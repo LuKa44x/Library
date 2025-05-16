@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Library</title>
 </head>
 <body>
-    
+    <form>
+        <input type="text" name="title" id="title" required>
+        <input type="text" name="author" id="author" required>
+        <input type="text" name="pages" id="pages" required>
+        <input type="text" name="read" id="read" required>
+        <input type="text" name="description" id="description" required>
+        <input type="submit" id="submit" value="Submit">
+    </form>
 </body>
-
-<script>
-    function Book(title, author, pages, read) {
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-        this.read = read;
-        this.info = function(){
-            return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
-        }
-    }
-        const book1 = new Book('The Hobbit', 'J.R.R. Tolkien', 295, "not read yet");
-        console.log(book1.info());
-</script>
 </html>
