@@ -15,6 +15,7 @@ let pages = document.querySelector("#pages");
 let read = document.querySelector("#read");
 let description = document.querySelector("#description");
 
+
 function addBookToLibrary(){
     let bookID = getRandomBookID();
     const bookObj = new Book(bookID, title.value, author.value, pages.value, read.value, description.value);
@@ -35,7 +36,25 @@ function getBookElement(book, bookID){
         <p>${book.description}</p>
         <button class=${"bookBtn"} id=${bookID}>Remove</button>
         `;
+        let removeBtn = bookElement.querySelector(".bookBtn");
+        removeBookEvent(removeBtn);
         return bookElement;
+}
+
+function removeBookEvent(removeBtn){
+removeBtn.addEventListener("click", (e)=>{
+        let idValue = e.target.id;
+        let div = document.getElementById(idValue);
+        div.remove();
+        removeBookFromArray(idValue);
+   });
+}
+
+function removeBookFromArray(idValue){
+    const index= myLibrary.findIndex((element) =>{
+        return element.id ===idValue;
+    });
+    myLibrary.splice(index,1);
 }
 
 function getRandomBookID(){
