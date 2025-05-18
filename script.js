@@ -29,11 +29,11 @@ function getBookElement(book, bookID){
     bookElement.classList.add('book');
     bookElement.id = bookID;
     bookElement.innerHTML =`
-        <h3>${book.title}</h3>
-        <p>Autore: ${book.author}</p>
-        <p>Pagine: ${book.pages}</p>
-        <p>Letto: ${book.read}</p>
-        <p>${book.description}</p>
+        <h3 class=${"bookContent"}>${book.title}
+        <p>${book.author}</p></h3>
+        <p class=${"bookContent"}>Pages: ${book.pages}</p>
+        <p class=${"bookContent"}>${book.description}</p>
+        <p class=${"bookContent"}>Read: ${book.read}</p>
         <button class=${"bookBtn"} id=${bookID}>Remove</button>
         `;
         let removeBtn = bookElement.querySelector(".bookBtn");
@@ -67,3 +67,7 @@ function submitClick(event){
     event.preventDefault();
     addBookToLibrary();
 }
+
+const dialog = document.querySelector(".addNewBook");
+const dialogBtn = document.querySelector(".dialogBtn");
+dialogBtn.onclick = () => dialog.showModal();

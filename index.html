@@ -5,19 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <title>Library</title>
 </head>
 <body>
     <div class="gridContainer">
         
     </div>
+    
+
+    <button class="dialogBtn">Apri</button>
+    <dialog class="addNewBook">
     <form>
-        <input type="text" name="title" id="title" required>
-        <input type="text" name="author" id="author" required>
-        <input type="text" name="pages" id="pages" required>
-        <input type="text" name="read" id="read" required>
-        <input type="text" name="description" id="description" required>
+        <input type="text" name="title" id="title" placeholder="Title" required>
+        <input type="text" name="author" id="author" placeholder="Author" required>
+        <input type="text" name="pages" id="pages" placeholder="Pages" required>
+        <label for="read">Read:</label>
+        <select name="read" id="read" placeholder="Read" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <input type="text" name="description" id="description" placeholder="Description" required>
         <input type="submit" id="submit" value="Submit">
     </form>
+</dialog>
 </body>
 </html>
