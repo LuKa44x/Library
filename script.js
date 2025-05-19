@@ -14,7 +14,7 @@ let author = document.querySelector("#author");
 let pages = document.querySelector("#pages");
 let read = document.querySelector("#read");
 let description = document.querySelector("#description");
-
+let inputText = document.querySelectorAll("input[type='text']");
 
 function addBookToLibrary(){
     let bookID = getRandomBookID();
@@ -66,6 +66,19 @@ submit.addEventListener("click", submitClick, false);
 function submitClick(event){
     event.preventDefault();
     addBookToLibrary();
+    resetForm();
+}
+
+const closeBtn = document.querySelector("#closeBtn");
+closeBtn.addEventListener("click", (event) =>{
+    event.preventDefault();
+    dialog.close();
+});
+
+function resetForm(){
+    inputText.forEach(input => {
+    input.value ="";
+});
 }
 
 const dialog = document.querySelector(".addNewBook");
