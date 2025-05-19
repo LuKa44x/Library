@@ -96,6 +96,7 @@ h3.bookContent > p{
     height: 10%;
     border-radius: 25px;
     min-height: 25px;
+    max-width: 150px;
 }
 
 .addNewBook{
@@ -115,7 +116,7 @@ h3.bookContent > p{
   backdrop-filter: blur(4px);
 }
 
-form > input[type=text]{
+form > input[type=text], input[type=number]{
     border: 1px solid #ccc;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
@@ -126,12 +127,12 @@ form > input[type=text]{
   
 }
 
-form > input[type=text]:hover{
+form > input[type=text]:hover , input[type=number]:hover{
     box-shadow: 0 8px 16px rgba(0,0,0,1);
     
 }
 
-form > input[type=text]:focus{
+form > input[type=text]:focus , input[type=number]:focus{
     box-shadow:inset 2px 4px 8px #130731;
     
 }

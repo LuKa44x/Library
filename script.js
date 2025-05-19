@@ -15,6 +15,7 @@ let pages = document.querySelector("#pages");
 let read = document.querySelector("#read");
 let description = document.querySelector("#description");
 let inputText = document.querySelectorAll("input[type='text']");
+let inputNumber = document.querySelectorAll("input[type='number']");
 
 function addBookToLibrary(){
     let bookID = getRandomBookID();
@@ -77,6 +78,10 @@ closeBtn.addEventListener("click", (event) =>{
 
 function resetForm(){
     inputText.forEach(input => {
+    input.value ="";
+});
+
+inputNumber.forEach(input => {
     input.value ="";
 });
 }
